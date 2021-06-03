@@ -57,3 +57,49 @@ abbrev_name = function (str1) {
     return split_names[0];
 };
 console.log(abbrev_name("John Snow"));
+
+/***************************************************************************************​
+TASK 6. Write a function that adds string to the left or right of string, by replacing it’s characters.
+"0000", "123", "l", -> 0123
+"00000000", "123", "r", -> 12300000
+/***************************************************************************************/
+function addString (a, b, c) {
+    if (c === "l") {
+        return (a + b).slice(-a.length)
+    } else {
+        return (b + a).substring(0, a.length);
+    }
+}
+
+console.log(addString("0000", "123", "l"))
+console.log(addString("00000000", "123", "r"))
+
+/***************************************************************************************​
+TASK 7. Write a function to capitalize the first letter of a string and returns modified string.
+"js string exercises" -> "Js string exercises"
+/***************************************************************************************/
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+console.log(capitalizeFirstLetter('js string exercises'));
+
+/***************************************************************************************​
+TASK 8. Write a function to hide email addresses to protect them from unauthorized users.
+"somerandomaddress@example.com" -> "somerand...@example.com"
+/***************************************************************************************/
+protect_email = function (user_email) {
+    var avg, splitted, part1, part2;
+    splitted = user_email.split("@");
+    part1 = splitted[0];
+    avg = part1.length / 2;
+    part1 = part1.substring(0, (part1.length - avg));
+    part2 = splitted[1];
+    return part1 + "...@" + part2;
+};
+console.log(protect_email("somerandomaddress@example.com"));
+
+/***************************************************************************************​
+TASK 8. Write a program that accepts a string as input and swaps the case of each character. For
+example, if you input &#39;The Quick Brown Fox&#39;, the output should be "tHE qUICK bROWN fOX".
+"somerandomaddress@example.com" -> "somerand...@example.com"
+/***************************************************************************************/

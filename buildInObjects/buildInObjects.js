@@ -373,8 +373,63 @@ days = Math.floor(diff / (1000 * 60 * 60 * 24));
 console.log(days + " days until Nikola's birthday!");
 
 /**************************************************************************************
-TASK 9. Write a function that for a given departure and arrival time calculates the time the trip
-takes.
+TASK 9. Write a function that for a given departure and arrival time calculates the time the trip takes.
 Input: 8:22:13 11:43:22
 Output: 3 hours 21 minutes 9 seconds
 /**************************************************************************************/
+
+var date1 = new Date("8:22:13");
+var date2 = new Date("11:43:22");
+
+var res = Math.abs(date2 - date1);
+
+console.log(date1);
+
+/**************************************************************************************
+TASK 10. 
+a.Write a constructor function that creates points in space. Each point in space has
+its own x, y, and z coordinate. For example, (3, 5, 1) can be a point in space.
+b. Write a function that calculates the distance between two points in the space.
+/**************************************************************************************/
+
+/**************************************************************************************
+TASK 11. a. Write a function that generates a random integer value between 5 and 20.
+b. Write a function that generates a random integer value between 50 and 100.
+c. Write a function which expects a number and a callback generator function and
+returns an array of numbers produced by the generator function.
+/**************************************************************************************/
+//a & b//
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+console.log(getRandomInt(5, 20));
+console.log(getRandomInt(50, 100));
+
+// c
+
+/**************************************************************************************
+TASK 12. Write a function that shuffles the elements of a given array.
+Input: [3, 6, 11, 2, 9, 1]
+Output: [6, 2, 9, 1, 3, 11] (it can be any random permutation of the given array)
+/**************************************************************************************/
+var a = [3, 6, 11, 2, 9, 1];
+function shuffle(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+console.log(shuffle(a));
+
+//
+
+var array = [3, 6, 11, 2, 9, 1];
+var shuffledArray = array.sort((a, b) => 0.5 - Math.random());
+
+console.log(shuffledArray);
