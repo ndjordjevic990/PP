@@ -60,6 +60,7 @@
     };
 
     // GET MOST EXPENSIVE ITEM - CHECKED - Add getMostExpensive method that finds the most expensive product and prints out its info.
+
     this.getMostExpensive = function () {
       var highestPrice = 0;
       var mostExpensiveProduct;
@@ -77,6 +78,40 @@
         highestPrice
       );
     };
+
+    // TOTAL PRICE - CHECKED - Add calculateTotalPrice method to ShoppingBag that calculates the total price of products in the shopping bag list.
+
+    this.calculateTotalPrice = function () {
+      var totalPrice = 0;
+      this.listOfProducts.forEach(function (product) {
+        totalPrice += parseFloat(product.price);
+      });
+      return totalPrice;
+    };
+  }
+
+  // ***************PAYMENT CARD*********************
+  //   CKECKED - Create a constructor function with properties representing the following:
+  // ● PaymentCard - account balance (number with 2 decimal places), active or inactive status valid until date
+  function PaymentCard(balance, validity, status) {
+    this.accountBalance = parseFloat(balance.toFixed(2));
+    this.validity = validity;
+    this.status = status;
+  }
+
+  // ***************CHECKOUT AND BUY*********************
+  //CHECKOUT AND BUY - CHECKED - Create checkoutAndBuy function which receives shopping bag and payment card and prints if the purchase is successful or not. Purchase is successful only if the amount on the card is greater or equal to the total price of products in the shopping bag. If there is not enough money, print out the amount that is missing to complete the purchase.
+  function checkoutAndBuy(bag, card) {
+    var missingMoney = 0;
+    if (card.accountBalance >= bag.calculateTotalPrice()) {
+      return "Successful purchase!";
+    } else {
+      missingMoney = bag.calculateTotalPrice() - card.accountBalance;
+      return (
+        "Unsuccessful purchase. You are missing the following amount: " +
+        missingMoney
+      );
+    }
   }
 
   // ***************TESTING*********************
@@ -85,6 +120,7 @@
   var product1 = new Product("Jabuka", 25.2274, "2023, 5, 5");
   var product2 = new Product("Banana", 12.2699, "2020, 5, 5");
   var product3 = new Product("Jagode", 15.2274, "2023, 5, 5");
+  var paymentCard1 = new PaymentCard(30, "valid", "active");
   var shoppingBag = new ShoppingBag();
 
   /**** adding products to shooping list ******/
@@ -100,8 +136,14 @@
     "Average price of your product list is ",
     shoppingBag.averagePrice()
   );
-
   console.log(shoppingBag.getMostExpensive());
+
+  console.log(
+    "Total price of the products in your shopping list is ",
+    shoppingBag.calculateTotalPrice()
+  );
+
+  console.log(checkoutAndBuy(shoppingBag, paymentCard1));
 })();
 
 // var a = new Date();
