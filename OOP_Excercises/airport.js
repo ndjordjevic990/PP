@@ -155,13 +155,13 @@
 
     console.log(nikolaTesla.getData());
 
-  //   var person1 = new Person("Pera");
-  //   var seat1 = new Seat(22, "w");
-  //   var passenger1 = new Passenger(person1, seat1);
-  //   var flight1 = new Flight("Belgrade - Paris", "Oct 25 2017");
-  //   console.log(person1);
-  //   console.log(fligh1.date.getFullYear());
-  // } catch (error) {
-  //   console.log("Error message: " + error.message);
-  // }
+    //   var person1 = new Person("Pera");
+    //   var seat1 = new Seat(22, "w");
+    //   var passenger1 = new Passenger(person1, seat1);
+    //   var flight1 = new Flight("Belgrade - Paris", "Oct 25 2017");
+    //   console.log(person1);
+    //   console.log(fligh1.date.getFullYear());
+  } catch (error) {
+    console.log("Error message: " + error.message);
+  }
 })();
