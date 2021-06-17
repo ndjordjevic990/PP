@@ -4,6 +4,18 @@ class BasicInfo {
     this.licence = licence;
     this.stars = stars;
   }
+
+  isCCLicense() {
+    return this.license === "CC";
+  }
+
+  like() {
+    return ++this.stars;
+  }
+
+  showStars() {
+    return this.stars;
+  }
 }
 
 //*****************WEB APPS*********************************** */
@@ -32,18 +44,6 @@ class WebApp extends BasicInfo {
   reactBased() {
     return this.technologies === "react";
   }
-
-  isCCLicense() {
-    return this.license === "CC";
-  }
-
-  like() {
-    return ++this.stars;
-  }
-
-  showStars() {
-    return this.stars;
-  }
 }
 
 //*****************MOBILE APPS*********************************** */
@@ -69,21 +69,8 @@ class MobileApp extends BasicInfo {
   forAndroid() {
     return this.platforms === "android";
   }
-
-  isCCLicense() {
-    return this.license === "CC";
-  }
-
-  like() {
-    return ++this.stars;
-  }
-
-  showStars() {
-    return this.stars;
-  }
 }
 
-//*****************TESTING*********************************** */
 //*****************TESTING*********************************** */
 
 var web1 = new WebApp("evernote", "www.evernote.com", "jQuery", "CC", 4);
