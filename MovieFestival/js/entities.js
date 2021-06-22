@@ -52,4 +52,16 @@ Program.prototype.getData = function () {
   var month = this.date.getMonth() + 1;
   var year = this.date.getFullYear();
   var date = day + "." + month + "." + year;
+  var resultStr = date;
+  if (this.getTotalMovies() === 0) {
+    resultStr += ", Program to be announced.";
+    return resultStr;
+  }
+  resultStr +=
+    ", " +
+    this.getTotalMovies() +
+    " movies, duration:" +
+    this.lenghtOfAllMovies() +
+    "min";
+  return resultStr;
 };
