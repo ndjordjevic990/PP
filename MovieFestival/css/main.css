@@ -1,6 +1,8 @@
 body {
   margin: 0;
   padding: 0;
+  background-image: url(bg.png);
+  background-repeat: repeat;
 }
 
 h1 {
@@ -13,6 +15,7 @@ form {
   margin: 0 auto;
   border: 2px solid gray;
   padding: 10px 5px;
+  background:whitesmoke
 }
 
 form fieldset {
@@ -37,9 +40,9 @@ form select {
   border-radius: 5px;
 }
 
-#button-create-program,
-#button-add-movie,
-#button-create-movie {
+#create-program,
+#add-movie,
+#create-movie {
   height: 30px;
   background-color: #50ae54;
 }

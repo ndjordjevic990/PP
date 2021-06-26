@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+header {
+    background-image: url("https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
+    background-size: cover;
+    background-position:center;
+    
+    height: 100%;
+    padding: 100px 0px;
+    text-align: center;
+}
+
+header h2, header h3 {
+    padding: 10px;
+}
+
+.div-passed {
+    padding: 10px;
+    border: 2px solid #33B8B4;
+    width: 35%;
+    margin: auto;
+    background-color: #33B8B4;
+    text-align: left;
+    display: inline-flex;
+}
+.div-failed {
+    padding: 10px;
+    border: 2px solid #FC524F;
+    width: 35%;
+    margin: auto;
+    margin-top: 15px;
+    background-color: #FC524F;
+    text-align: left;
+   display: flex;
+}
+
+#total-students-passed {
+    text-align: right;
+    width: 90%;
+    color: white
+}
+#total-students-failed {
+    text-align: right;
+    width: 80%;
+    color: white
+}
+#total-students-failed-percentage {
+    text-align: right;
+    width: 10%;
+    color: white
+}
+
+form {
+    display: inline-flex;
+    background-color: lightgray;
+    padding: 20px;
+    width: 100%;
+    justify-content: center;
+    
+}
+
+.form-elements {
+    padding: 0 10px;
+
+}
+
+
+#add-button:hover {
+    background-color: rgb(135, 186, 236);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+#add-button {
+    color: #33B8B4;
+    font-size:19px;
+}
+
+input{
+    font-size: 19px;
+}

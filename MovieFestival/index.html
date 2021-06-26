@@ -32,18 +32,15 @@
           <select name="genre" id="genre">
             <option value="">--Please choose an option--</option>
             <option value="action">Action</option>
-            <option value="action">Action</option>
             <option value="comedy">Comedy</option>
             <option value="drama">Drama</option>
             <option value="horror">Horror</option>
             <option value="adventure">Adventure</option>
           </select>
 
-          <input type="button" id="button-create-movie" value="Create Movie" />
+          <input type="button" id="create-movie" value="Create Movie" />
 
-          <div class="error-handling-movie">
-            <p></p>
-          </div>
+          <p id="movie-error"></p>
           <ul id="movie-list"></ul>
         </fieldset>
 
@@ -51,29 +48,27 @@
         <fieldset>
           <legend>Program</legend>
           <label for="date">Date:</label>
-          <input type="date" id="date" />
+          <input type="date" id="date" placeholder="mm/dd/yyyy" />
           <input
             type="button"
-            id="button-create-program"
+            id="create-program"
             value="Create Program"
           />
-          <div class="error-handling-program">
-            <p></p>
-          </div>
+          <p id="program-error"></p>
           <ul id="program-list"></ul>
 
           <!-- ************************ADD MOVIE TO PROGRAM SECTION******************************* -->
           <hr />
-          <label for="choose-movie">Choose Movie:</label>
-          <select name="choose-movie" id="choose-movie">
-            <option value="">--Please choose a Movie--</option>
+          <label for="select-movie">Select Movie:</label>
+          <select name="select-movie" id="movie-select">
+            <option value="">--Please select a Movie--</option>
           </select>
-          <select name="choose-program" id="choose-program">
-            <option value="">--Please choose a Program--</option>
+          <select name="select-program" id="program-select">
+            <option value="">--Please select a Program--</option>
           </select>
           <input
             type="button"
-            id="button-add-movie"
+            id="add-movie"
             value="Add Movie to Program"
           />
         </fieldset>
@@ -81,7 +76,7 @@
     </div>
 
     <!-- SCRIPT -->
-    <script src="./js/entities.js"></script>
-    <script src="./js/controller.js"></script>
+    <script src="../MovieFestival/js/entities.js"></script>
+    <script src="../MovieFestival/js/controller.js"></script>
   </body>
 </html>
