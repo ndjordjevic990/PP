@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exem Statistic</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div>
+      <header>
+        <div class="exam">
+          <h1>Exam Statistic June</h1>
+          <h2>
+            Total students:
+            <span id="count"></span>
+          </h2>
+
+          <div id="passed" class="exam-passed">
+            <div><p class="passed-text">PASSED</p></div>
+            <div class="passed-count">
+              <div class="add-stat-pass">0</div>
+            </div>
+          </div>
+          <div id="failed" class="exam-failed">
+            <div><p class="failed-text">FAILED</p></div>
+            <div class="failed-count">
+              <div class="failed-count-number">0</div>
+              <div class="failed-percent"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <form class="input">
+        <div class="add-container">
+          <select name="" id="adding-subject">
+            <option value="JS">JS</option>
+            <option value="Python">Python</option>
+            <option value="MySQL">MySQL</option>
+          </select>
+          <input id="student-name" type="text" placeholder="Name Surname" />
+          <input id="student-grade" value="" type="text" placeholder="Grade" />
+          <input type="button" value="ADD" id="btn" />
+        </div>
+      </form>
+      <div><p id="error"></p></div>
+
+      <div id="div-passed">
+        <h4 id="pass-border">PASSED</h4>
+        <ul id="passed-list"></ul>
+      </div>
+      <div id="div-failed">
+        <h4 id="fail-border">FAILED</h4>
+        <ul id="failed-list"></ul>
+      </div>
+    </div>
+
+    <script src="./js/subject.js"></script>
+    <script src="./js/student.js"></script>
+    <script src="./js/exam.js"></script>
+    <script src="./js/form.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
