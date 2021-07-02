@@ -11,6 +11,7 @@ var passedListNode = document.querySelector("#passed-list");
 var failedListNode = document.querySelector("#failed-list");
 var buttonNode = document.querySelector("#btn");
 var totalFailedSummaryInHeader = document.querySelector(".failed-count-number");
+var totalFailedPercentageInHeader = document.querySelector(".failed-percent");
 var totalPassedSummaryInHeader = document.querySelector(".add-stat-pass");
 var totalCountNode = document.querySelector("#count");
 var errorNode = document.querySelector("#error");
@@ -24,6 +25,36 @@ function addStudentToListHandler() {
     studentNameNode.value,
     gradeNode.value
   );
+
+  var subjectValue = subjectSelectionNode.value;
+  var nameValue = studentNameNode.value;
+  var gradeValue = gradeNode.value;
+  //----------Error handling-------------
+
+  if (
+    !subjectValue ||
+    !nameValue ||
+    !gradeValue ||
+    gradeValue > 10 ||
+    gradeValue < 5
+  ) {
+    if (!subjectValue) {
+      return (errorNode.textContent = "Subject Input is required!");
+    }
+
+    if (!nameValue) {
+      return (errorNode.textContent = "Name Input is required!");
+    }
+
+    if (!gradeValue) {
+      return (errorNode.textContent = "Grade Input is required!");
+    }
+    if (gradeValue > 10 || gradeValue < 5) {
+      return (errorNode.textContent =
+        "Grade Input should be between 5 - 10! Please correct your input");
+    }
+  }
+
   console.log(addingStudentExam);
   var checkIfStudentPassOrFail = addingStudentExam.hasPassed();
   var createLiElementNode = document.createElement("li");
@@ -34,7 +65,6 @@ function addStudentToListHandler() {
     createLiElementNode.textContent =
       addingStudentExam.getExamInfo() + " - " + gradeNode.value;
     passedListNode.appendChild(createLiElementNode);
-
     totalPassedSummaryInHeader.innerHTML = addPassed.length;
   } else if (checkIfStudentPassOrFail === false) {
     addFailed.push(addingStudentExam);
@@ -47,13 +77,14 @@ function addStudentToListHandler() {
       Math.floor(
         (addFailed.length / (addPassed.length + addFailed.length)) * 100
       ) + "%";
-    totalFailedSummaryInHeader.textContent =
-      addFailed.length + " " + procentOfFail;
+    totalFailedSummaryInHeader.textContent = addFailed.length;
+    totalFailedPercentageInHeader.textContent = procentOfFail;
   }
   totalCountNode.innerHTML = addPassed.length + addFailed.length;
   subjectSelectionNode.value = "";
   studentNameNode.value = "";
   gradeNode.value = "";
+  errorNode.textContent = "";
 }
 
 buttonNode.addEventListener("click", addStudentToListHandler);

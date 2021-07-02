@@ -20,22 +20,22 @@ function collectForm() {
   addStudentToFailList = document.querySelector("#failed-list");
 }
 
-function validate() {
-  var subjectValue = subjectSelectionNode.value;
-  var nameValue = studentNameNode.value;
-  var gradeValue = gradeNode.value;
-  //----------Error handling-------------
-  if (!subjectValue) {
-    return (errorNode.textContent = "Subject is required");
-  }
+// function validate() {
+//   var subjectValue = subjectSelectionNode.value;
+//   var nameValue = studentNameNode.value;
+//   var gradeValue = gradeNode.value;
+//   //----------Error handling-------------
+//   if (!subjectValue) {
+//     return (errorNode.textContent = "Subject is required");
+//   }
 
-  if (!nameValue) {
-    return (errorNode.textContent = "Name is required");
-  }
+//   if (!nameValue) {
+//     return (errorNode.textContent = "Name is required");
+//   }
 
-  if (!gradeValue) {
-    return (errorNode.textContent = "Grade is required");
-  } else {
-    movieErrorElement.textContent = "";
-  }
-}
+//   if (!gradeValue) {
+//     return (errorNode.textContent = "Grade is required");
+//   } else {
+//     movieErrorElement.textContent = "";
+//   }
+// }
