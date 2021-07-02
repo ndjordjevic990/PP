@@ -81,7 +81,7 @@ function addStudentToListHandler() {
     totalFailedPercentageInHeader.textContent = procentOfFail;
   }
   totalCountNode.innerHTML = addPassed.length + addFailed.length;
-  subjectSelectionNode.value = "";
+  subjectSelectionNode.value = "JS";
   studentNameNode.value = "";
   gradeNode.value = "";
   errorNode.textContent = "";
