@@ -36,7 +36,8 @@ function addStudentToListHandler() {
     !nameValue ||
     !gradeValue ||
     gradeValue > 10 ||
-    gradeValue < 5
+    gradeValue < 5 ||
+    nameValue.indexOf(" ") < 0
   ) {
     if (!subjectValue) {
       return (errorNode.textContent = "Subject Input is required!");
@@ -46,16 +47,21 @@ function addStudentToListHandler() {
       return (errorNode.textContent = "Name Input is required!");
     }
 
+    if (nameValue.indexOf(" ") < 0) {
+      return (errorNode.textContent = "Please insert both name and surname!");
+    }
+
     if (!gradeValue) {
       return (errorNode.textContent = "Grade Input is required!");
     }
+
     if (gradeValue > 10 || gradeValue < 5) {
       return (errorNode.textContent =
         "Grade Input should be between 5 - 10! Please correct your input");
     }
   }
+  //----------Proceed with checking if Student Passed or Failed-------------
 
-  console.log(addingStudentExam);
   var checkIfStudentPassOrFail = addingStudentExam.hasPassed();
   var createLiElementNode = document.createElement("li");
 
@@ -81,6 +87,9 @@ function addStudentToListHandler() {
     totalFailedPercentageInHeader.textContent = procentOfFail;
   }
   totalCountNode.innerHTML = addPassed.length + addFailed.length;
+
+  //----------Reset the values-------------
+
   subjectSelectionNode.value = "JS";
   studentNameNode.value = "";
   gradeNode.value = "";
